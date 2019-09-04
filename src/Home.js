@@ -21,10 +21,10 @@ function MovieItem({ movie, makeFavorite }) {
       <div className="card small">
         <Link to={{ pathname: "/detail", movie: movie }}>
           <div className="card-image">
-            {/* <img
+            <img
               src={`http://image.tmdb.org/t/p/w342//${movie.backdrop_path}`}
               alt="avater"
-            /> */}
+            />
             <span className="card-title">{movie.original_title}</span>
           </div>
           <div className="card-content ">
@@ -80,7 +80,7 @@ function Home({ all_movies, isFetching, error, getMovies, makeFavorite }) {
   let [page, setPage] = useState(2);
   return (
     <div className="row">
-      <SearchForm />
+      {/* <SearchForm /> */}
 
       {all_movies ? (
         <div>

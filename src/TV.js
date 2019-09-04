@@ -21,10 +21,10 @@ function MovieItem({ movie, makeFavorite }) {
       <div className="card small">
         <Link to={{ pathname: "/detail", movie: movie }}>
           <div className="card-image">
-            {/* <img
+            <img
               src={`http://image.tmdb.org/t/p/w342//${movie.backdrop_path}`}
               alt="avater"
-            /> */}
+            />
             <span className="card-title">{movie.name}</span>
           </div>
           <div className="card-content ">
@@ -83,7 +83,7 @@ function TV({ tvshows, isFetching, error, makeFavorite }) {
 
   return (
     <div className="row">
-      <SearchForm />
+      {/* <SearchForm /> */}
       {isFetching ? (
         <Loader />
       ) : (
