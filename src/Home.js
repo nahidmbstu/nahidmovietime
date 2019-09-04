@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import M from "materialize-css";
+import { toast } from "react-toastify";
 
 import "./App.css";
 import { api_key } from "./api";
@@ -13,7 +13,7 @@ function MovieItem({ movie, makeFavorite }) {
   const makeFavotite = movie => {
     movie.type = "movie";
     makeFavorite(movie);
-    M.Toast("added to favorites");
+    toast("movie added to favorites");
   };
 
   return (
@@ -43,7 +43,7 @@ function MovieItem({ movie, makeFavorite }) {
             style={{ color: "grey", cursor: "pointer" }}
             onClick={() => makeFavotite(movie)}
           >
-            star
+            &hearts;
           </i>
         </div>
       </div>
