@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import M from "materialize-css";
+
 import "./App.css";
 import { api_key } from "./api";
 import SearchForm from "./SearchBar";
@@ -11,6 +13,7 @@ function MovieItem({ movie, makeFavorite }) {
   const makeFavotite = movie => {
     movie.type = "movie";
     makeFavorite(movie);
+    M.Toast("added to favorites");
   };
 
   return (
@@ -18,10 +21,10 @@ function MovieItem({ movie, makeFavorite }) {
       <div className="card small">
         <Link to={{ pathname: "/detail", movie: movie }}>
           <div className="card-image">
-            <img
+            {/* <img
               src={`http://image.tmdb.org/t/p/w342//${movie.backdrop_path}`}
               alt="avater"
-            />
+            /> */}
             <span className="card-title">{movie.original_title}</span>
           </div>
           <div className="card-content ">

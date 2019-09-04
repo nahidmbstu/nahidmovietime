@@ -9,7 +9,9 @@ export function getMovies(page = 1) {
     try {
       let res = await fetch(
         "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=" +
-          page
+          page +
+          "&api_key=" +
+          api_key
       );
       let data = await res.json();
       console.log(data);
